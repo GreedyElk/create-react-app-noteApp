@@ -1,0 +1,312 @@
+:root {
+
+  /*Color scheme*/
+
+  --colorBackground: #e9e8e8;
+  --colorText: #232222;
+  --colorTextArea: #ededed;
+  --colorShadowBox: #a1a1a1;
+  --colorButtonBackground: rgb(226, 147, 57);
+  --colorButtonText: rgb(255, 255, 255);
+  --colorModalBackground: rgba(23, 21, 21, 0.8);
+
+  /*////////////*/
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--colorText);
+  background-color: var(--colorBackground);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+
+  color: var(--colorText);
+  background-color: var(--colorBackground);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  margin-left: 475px;
+  width: 150px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--colorButtonText);
+  background-color: var(--colorButtonBackground);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  color: var(--colorText);
+  background-color: var(--colorBackground);
+  border-color: var(--colorText);
+}
+/*button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}*/
+
+/*Form*/
+
+#formBasic{
+  padding: 25px;
+  margin-right: auto;
+  margin-left: auto;
+
+  width: 750px;
+  height: 540px;
+
+  background-color: var(--colorBackground);
+
+  border-radius: 35px;
+
+  box-shadow: 9px 9px 40px 1px var(--colorShadowBox),
+  -9px -9px 40px 1px var(--colorShadowBox);
+}
+
+#inputTitle{
+  margin-bottom: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  width: 700px;
+  height: 25px;
+
+  border-radius: 25px;
+
+  font-size: 25px;
+
+  color: var(--colorText);
+  background-color: var(--colorTextArea);
+}
+textarea{
+  resize: none;
+
+  padding: 25px;
+
+  width: 700px;
+  height: 390px;
+
+  border-radius: 25px;
+
+  font-size: 25px;
+
+  color: var(--colorText);
+  background-color: var(--colorTextArea);
+}
+textarea::-webkit-scrollbar{
+  display: none;
+}
+
+/*Note*/
+
+#containerNotes{
+  margin-top: 50px;
+
+  min-width: 720px;
+
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 30px;
+  grid-column-gap: 15px;
+}
+@media (min-width: 768px) {
+  #containerNotes {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  #containerNotes {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  #containerNotes {
+    width: 1170px;
+  }
+}
+.note{
+  width: fit-content;
+  height: fit-content;
+  min-width: 285px;
+  max-height: 380px;
+
+  justify-self: center;
+
+  padding: 25px;
+  padding-top: 8px;
+  padding-left: 15px;
+
+  background-color: var(--colorBackground);
+
+  border-radius: 25px;
+
+  box-shadow: 9px 9px 40px 1px var(--colorShadowBox),
+  -9px -9px 40px 1px var(--colorShadowBox);
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+}
+
+.noteTitle{
+  font-size: 1.5rem;
+  line-height: 2.5;
+  font-weight: 600;
+
+  margin: 0;
+}
+.noteText{
+  max-height: 150px;
+  min-height: 135px;
+
+  color: var(--colorText);
+  background-color: var(--colorBackground);
+
+  overflow: scroll;
+
+  padding: 15px;
+  padding-left: 8px;
+
+  border-radius: 15px;
+
+  box-shadow: inset 2px 2px 9px 1px var(--colorShadowBox),
+  inset -2px -2px 9px 1px var(--colorShadowBox);
+
+}
+.noteText::-webkit-scrollbar{
+  display: none;
+}
+
+.noteDate{
+  font-size: 1.2rem;
+  line-height: 2.5;
+  font-weight: 600;
+}
+
+.deleteButton{
+  margin-left: 50%;
+
+  z-index: 5;
+}
+
+/*Modal*/
+.modalBody{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 998;
+
+  height: 120vh;
+
+  background-color: var(--colorModalBackground);
+}
+.modal{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  padding: 25px;
+  padding-top: 8px;
+  padding-left: 15px;
+
+  height: 540px;
+  width: 350px;
+
+  background-color: var(--colorBackground);
+
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: top;
+
+  border-radius: 20px;
+
+  box-shadow: 2px 2px 40px 1px var(--colorShadowBox),
+  -2px -2px 40px 1px var(--colorShadowBox);
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+
+}
+.modal .note{
+  box-shadow: inset 2px 2px 9px 1px var(--colorShadowBox),
+  inset -2px -2px 9px 1px var(--colorShadowBox);
+}
+.modal .noteText{
+  box-shadow: none;
+}
+
+.modal input{
+  background-color: var(--colorBackground);
+  border: none;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+.madal .noteText p{
+  margin: 0;
+}
+.modal textarea{
+  max-width: 250px;
+
+  margin: 0px;
+
+  border: none;
+  background-color: var(--colorBackground);
+
+  box-shadow: inset 2px 2px 9px 1px var(--colorShadowBox),
+  inset -2px -2px 9px 1px var(--colorShadowBox);
+}
+
+#buttonChange{
+  margin-left: auto;
+  margin-top: 9px;
+}
